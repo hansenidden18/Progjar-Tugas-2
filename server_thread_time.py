@@ -22,7 +22,7 @@ class ProcessTheClient(threading.Thread):
 				if msg[-2:] == '\r\n' and msg[:4] == 'TIME':
 					curr_time = time.strftime("%H:%M:%S")
 					hasil = f"JAM {curr_time}\r\n"
-					logging.warning(f"[SERVER] balas ke cliend: {hasil}")
+					logging.warning(f"[SERVER] balas ke client: {hasil}")
 					hasil = hasil.encode()
 					self.connection.sendall(hasil)
 					msg=""
